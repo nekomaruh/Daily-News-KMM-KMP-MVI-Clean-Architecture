@@ -60,6 +60,6 @@ android {
     }
 }
 dependencies {
-    implementation(libs.androidx.lifecycle.viewmodel.android)
-    implementation(libs.androidx.lifecycle.viewmodel.desktop)
+    //implementation(libs.androidx.lifecycle.viewmodel.android)
+    //implementation(libs.androidx.lifecycle.viewmodel.desktop)
 }

@@ -36,6 +36,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    configurations.all {
+        exclude(group = "xmlpull", module = "xmlpull")
+    }
 }
 
 dependencies {
@@ -44,5 +48,9 @@ dependencies {
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
+    //implementation(libs.androidx.material3.android)
+    implementation(libs.androidx.navigation.safe.args.generator)
     debugImplementation(libs.compose.ui.tooling)
+
+    implementation(libs.coil.compose)
 }
