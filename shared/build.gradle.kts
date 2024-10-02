@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
-    id("co.touchlab.skie") version "0.4.19" // Interoperabilidad Swift con Kotlin
+    id("co.touchlab.skie") version "0.9.0" // Interoperabilidad Swift con Kotlin
 }
 
 kotlin {

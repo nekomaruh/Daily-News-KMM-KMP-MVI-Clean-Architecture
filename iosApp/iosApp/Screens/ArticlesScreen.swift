@@ -16,7 +16,7 @@ extension ArticlesScreen {
         let articlesViewModel: ArticlesViewModel
         
         init(){
-            articlesVewmodel = ArticlesViewModel()
+            articlesViewModel = ArticlesViewModel()
             articlesState = articlesViewModel.articlesState.value
         }
         
@@ -78,7 +78,7 @@ struct ArticleItemView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8){
-            AsyncImage(url: URL(string: article.imageURL)){ phase in
+            AsyncImage(url: URL(string: article.imageUrl)){ phase in
                 if phase.image != nil {
                     phase.image!.resizable().aspectRatio(contentMode: .fit)
                 } else if phase.error != nil {
@@ -109,5 +109,5 @@ struct ErrorMessage: View {
 }
 
 #Preview {
-    ArticlesScreen()
+    //ArticlesScreen()
 }
