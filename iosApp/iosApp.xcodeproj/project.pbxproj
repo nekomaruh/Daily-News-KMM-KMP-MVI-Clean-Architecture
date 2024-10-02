@@ -13,6 +13,7 @@
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		BE6826DA2C8FA9EA00C8FD7B /* AboutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6826D92C8FA9EA00C8FD7B /* AboutListView.swift */; };
 		BE6826DC2C97C26C00C8FD7B /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6826DB2C97C26C00C8FD7B /* AboutScreen.swift */; };
+		BEA99BBB2C9E262700A8D78E /* ArticlesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA99BBA2C9E262700A8D78E /* ArticlesScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,7 @@
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE6826D92C8FA9EA00C8FD7B /* AboutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutListView.swift; sourceTree = "<group>"; };
 		BE6826DB2C97C26C00C8FD7B /* AboutScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
+		BEA99BBA2C9E262700A8D78E /* ArticlesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +80,8 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				BEA99BB92C9E25EB00A8D78E /* Screens */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
-				BE6826DB2C97C26C00C8FD7B /* AboutScreen.swift */,
-				BE6826D92C8FA9EA00C8FD7B /* AboutListView.swift */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
@@ -94,6 +95,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BEA99BB92C9E25EB00A8D78E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BE6826DB2C97C26C00C8FD7B /* AboutScreen.swift */,
+				BE6826D92C8FA9EA00C8FD7B /* AboutListView.swift */,
+				BEA99BBA2C9E262700A8D78E /* ArticlesScreen.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEA99BBB2C9E262700A8D78E /* ArticlesScreen.swift in Sources */,
 				BE6826DA2C8FA9EA00C8FD7B /* AboutListView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
@@ -324,6 +336,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -354,6 +367,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

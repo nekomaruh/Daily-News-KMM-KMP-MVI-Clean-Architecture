@@ -6,6 +6,7 @@ compose = "1.5.4"
 compose-compiler = "1.5.4"
 compose-material3 = "1.1.2"
 androidx-activityCompose = "1.8.0"
+kotlinxCoroutinesCore = "1.9.0"
 lifecycleViewmodelKtx = "2.8.5"
 lifecycleViewmodelAndroid = "2.8.5"
 lifecycleViewmodelDesktop = "2.8.5"
@@ -26,6 +27,7 @@ androidx-lifecycle-viewmodel-android = { group = "androidx.lifecycle", name = "l
 androidx-lifecycle-viewmodel-desktop = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-desktop", version.ref = "lifecycleViewmodelDesktop" }
 androidx-material3-android = { group = "androidx.compose.material3", name = "material3-android", version.ref = "material3Android" }
 androidx-navigation-safe-args-generator = { group = "androidx.navigation", name = "navigation-safe-args-generator", version.ref = "navigationSafeArgsGenerator" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    id("co.touchlab.skie") version "0.4.19" // Interoperabilidad Swift con Kotlin
 }
 
 kotlin {
@@ -25,9 +26,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            //put your multiplatform dependencies here
-            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
-
+            implementation(libs.kotlinx.coroutines.core)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -44,8 +43,7 @@ kotlin {
 
     }
 
-    // Se debe agregar en KMM
-    task("testClasses")
+    task("testClasses") // Se debe agregar en KMM
 }
 
 android {
