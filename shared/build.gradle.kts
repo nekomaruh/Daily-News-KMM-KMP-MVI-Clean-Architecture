@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     id("co.touchlab.skie") version "0.9.0" // Interoperabilidad Swift con Kotlin
+    kotlin("plugin.serialization") version "1.9.20"
 }
 
 kotlin {
@@ -27,6 +28,10 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.kotlinx.json)
+            implementation(libs.ktor.client.android)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -58,6 +63,7 @@ android {
     }
 }
 dependencies {
+    implementation(libs.firebase.crashlytics.buildtools)
     //implementation(libs.androidx.lifecycle.viewmodel.android)
     //implementation(libs.androidx.lifecycle.viewmodel.desktop)
 }
