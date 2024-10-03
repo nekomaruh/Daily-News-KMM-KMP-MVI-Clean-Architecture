@@ -87,7 +87,7 @@ struct ArticleItemView: View {
                     ProgressView()
                 }
             }
-            Text(article.description)
+            Text(article.description_)
             Text(article.date).frame(maxWidth: .infinity, alignment: .trailing).foregroundStyle(.gray)
         }.padding(16)
     }
