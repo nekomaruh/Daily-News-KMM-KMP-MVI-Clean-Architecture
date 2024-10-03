@@ -14,18 +14,18 @@ import com.example.dailypals.android.screens.AboutScreen
 import com.example.dailypals.android.screens.ArticlesScreen
 import com.example.dailypals.android.screens.Screen
 import com.example.dailypals.articles.ArticlesViewModel
+import org.koin.androidx.compose.getViewModel
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun AppScaffold(articlesViewModel: ArticlesViewModel) {
+fun AppScaffold() {
     val navController = rememberNavController()
     Scaffold {
         AppNavHost(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(it),
-            navController = navController,
-            articlesViewModel = articlesViewModel
+            navController = navController
         )
     }
 }
@@ -34,7 +34,7 @@ fun AppScaffold(articlesViewModel: ArticlesViewModel) {
 fun AppNavHost(
     modifier: Modifier,
     navController: NavHostController,
-    articlesViewModel: ArticlesViewModel
+    articlesViewModel: ArticlesViewModel = getViewModel()
 ) {
     NavHost(
         modifier = modifier,

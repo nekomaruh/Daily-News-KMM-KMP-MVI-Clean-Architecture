@@ -54,4 +54,7 @@ dependencies {
 
     implementation(libs.coil.compose)
     implementation("androidx.navigation:navigation-compose:2.8.1")
+    implementation(libs.koin.androidx.compose)
+    implementation(libs.koin.android)
+
 }
