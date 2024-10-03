@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     id("co.touchlab.skie") version "0.9.0" // Interoperabilidad Swift con Kotlin
     kotlin("plugin.serialization") version "1.9.20"
+    alias(libs.plugins.sqlDelight)
 }
 
 kotlin {
@@ -33,6 +34,7 @@ kotlin {
             implementation(libs.ktor.serialization.kotlinx.json)
             implementation(libs.kotlinx.datetime)
             implementation(libs.koin.core)
+            implementation(libs.sql.coroutines.extensions)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -43,12 +45,13 @@ kotlin {
             implementation(libs.ktor.client.android)
             implementation(libs.koin.android)
             implementation(libs.koin.androidx.compose)
+            implementation(libs.sql.android.driver)
         }
 
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
+            implementation(libs.sql.native.driver)
         }
-
 
     }
 
@@ -66,8 +69,15 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
+
+sqldelight {
+    databases {
+        create(name = "DailyPalsDatabase"){
+            packageName.set("com.example.dailypals.db")
+        }
+    }
+}
+
 dependencies {
     implementation(libs.firebase.crashlytics.buildtools)
-    //implementation(libs.androidx.lifecycle.viewmodel.android)
-    //implementation(libs.androidx.lifecycle.viewmodel.desktop)
 }
