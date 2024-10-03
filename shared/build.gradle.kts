@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
@@ -35,7 +38,6 @@ kotlin {
             implementation(libs.kotlinx.datetime)
             implementation(libs.koin.core)
             implementation(libs.sql.coroutines.extensions)
-            implementation("co.touchlab:stately-common:1.2.5")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
