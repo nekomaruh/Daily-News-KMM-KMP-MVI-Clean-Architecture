@@ -14,4 +14,4 @@ This is a project from Kotlin Multiplatform Masterclass course.
 - Lifecycle
 - Navigation
 
-<img src="docs/articles.png" width="256"/>
+<img src="docs/articles.png" height="512"/> <img src="docs/articles_ios.png" height="512"/> 
