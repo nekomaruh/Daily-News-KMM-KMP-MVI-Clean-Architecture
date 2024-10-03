@@ -2,10 +2,10 @@ package com.example.dailypals.articles
 
 import com.example.dailypals.utils.getDaysAgo
 
-class ArticlesUseCase(private val articlesService: ArticlesService) {
+class ArticlesUseCase(private val repository: ArticlesRepository) {
     suspend fun getArticles(): List<Article> {
-        val articles = articlesService.getArticles()
-        return  _mapArticleRawToArticle(articles)
+        val articles = repository.getAllArticles()
+        return _mapArticleRawToArticle(articles)
     }
 
     fun _mapArticleRawToArticle(articlesRaw: List<ArticleRaw>): List<Article> {

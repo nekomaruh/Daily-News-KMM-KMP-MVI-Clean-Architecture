@@ -35,6 +35,7 @@ kotlin {
             implementation(libs.kotlinx.datetime)
             implementation(libs.koin.core)
             implementation(libs.sql.coroutines.extensions)
+            implementation("co.touchlab:stately-common:1.2.5")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -72,8 +73,8 @@ android {
 
 sqldelight {
     databases {
-        create(name = "DailyPalsDatabase"){
-            packageName.set("com.example.dailypals.db")
+        create("DailyPalsDatabase"){
+            packageName.set("com.example.dailypals.cache")
         }
     }
 }

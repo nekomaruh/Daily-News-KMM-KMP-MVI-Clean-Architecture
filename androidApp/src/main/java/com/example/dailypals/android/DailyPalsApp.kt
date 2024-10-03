@@ -1,6 +1,7 @@
 package com.example.dailypals.android
 
 import android.app.Application
+import com.example.dailypals.android.di.databaseModule
 import com.example.dailypals.android.di.viewmodelsModule
 import com.example.dailypals.di.sharedModules
 import org.koin.android.ext.koin.androidContext
@@ -13,7 +14,7 @@ class DailyPalsApp : Application() {
     }
 
     private fun initKoin() {
-        val modules = sharedModules + viewmodelsModule
+        val modules = sharedModules + viewmodelsModule + databaseModule
         startKoin {
             androidContext(this@DailyPalsApp)
             modules(modules)

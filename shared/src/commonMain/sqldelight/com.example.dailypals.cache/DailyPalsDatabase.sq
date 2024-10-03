@@ -1,0 +1,15 @@
+CREATE TABLE article (
+    title TEXT NOT NULL,
+    description TEXT,
+    date TEXT NOT NULL,
+    imageUrl TEXT
+);
+
+insertArticle:
+INSERT INTO article VALUES(?,?,?,?);
+
+selectArticles:
+SELECT * FROM article;
+
+removeAllArticles:
+DELETE FROM article;
