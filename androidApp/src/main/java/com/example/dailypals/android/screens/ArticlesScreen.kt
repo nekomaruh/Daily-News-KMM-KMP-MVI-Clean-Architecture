@@ -18,14 +18,17 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -34,28 +37,26 @@ import coil.compose.AsyncImage
 import com.example.dailypals.articles.Article
 import com.example.dailypals.articles.ArticlesState
 import com.example.dailypals.articles.ArticlesViewModel
+import com.google.accompanist.swiperefresh.SwipeRefresh
+import com.google.accompanist.swiperefresh.SwipeRefreshState
 
 @Composable
 fun ArticlesScreen(
     articlesViewModel: ArticlesViewModel,
     onAboutButtonTap: () -> Unit,
 ) {
-    val articlesState = articlesViewModel.articlesState.collectAsState()
+    val state = articlesViewModel.articlesState.collectAsState()
     Column {
         AppBar(onAboutButtonTap)
-        ShowContent(articlesState.value)
+        with(state.value) {
+            when {
+                articles.isNotEmpty() -> ArticlesListView(viewModel = articlesViewModel)
+                error != null -> ErrorMessage(state.value.error!!)
+                else -> Loader()
+            }
+        }
     }
 
-}
-
-@Composable
-private fun ShowContent(state: ArticlesState) = with(state) {
-    when {
-        loading -> Loader()
-        articles.isNotEmpty() -> ArticlesListView(articles = articles)
-        error != null -> ErrorMessage(state.error!!)
-        else -> {}
-    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -79,12 +80,19 @@ private fun AppBar(
 }
 
 @Composable
-fun ArticlesListView(articles: List<Article>) {
-    LazyColumn(
-        modifier = Modifier.fillMaxSize()
+fun ArticlesListView(viewModel: ArticlesViewModel) {
+    SwipeRefresh(
+        SwipeRefreshState(viewModel.articlesState.value.loading),
+        onRefresh = {
+            viewModel.getArticles(forceFetch = true)
+        }
     ) {
-        items(articles) {
-            ArticleItemView(article = it)
+        LazyColumn(
+            modifier = Modifier.fillMaxSize()
+        ) {
+            items(viewModel.articlesState.value.articles) {
+                ArticleItemView(article = it)
+            }
         }
     }
 }

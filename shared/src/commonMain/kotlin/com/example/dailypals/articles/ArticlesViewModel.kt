@@ -20,36 +20,13 @@ class ArticlesViewModel(
         getArticles()
     }
 
-    private fun getArticles() = scope.launch {
-        _articlesState.value = ArticlesState(loading = true)
+    fun getArticles(forceFetch: Boolean = false) = scope.launch {
+        _articlesState.value = ArticlesState(
+            loading = true,
+            articles = _articlesState.value.articles
+        )
         delay(1000)
-        val articles = articlesUseCase.getArticles()
+        val articles = articlesUseCase.getArticles(forceFetch)
         _articlesState.emit(ArticlesState(articles = articles))
     }
-
-    /*
-    suspend fun fetchArticles(): List<Article> {
-        return mockArticles
-    }
-
-    private val mockArticles = listOf(
-        Article(
-            title = "Title 1",
-            description = "Description 1",
-            date = "Date 1",
-            imageUrl = "Image 1"
-        ),
-        Article(
-            title = "Title 2",
-            description = "Description 2",
-            date = "Date 2",
-            imageUrl = "Image 2"
-        ),
-        Article(
-            title = "Title 3",
-            description = "Description 3",
-            date = "Date 3",
-            imageUrl = "Image 3"
-        )
-    )*/
 }

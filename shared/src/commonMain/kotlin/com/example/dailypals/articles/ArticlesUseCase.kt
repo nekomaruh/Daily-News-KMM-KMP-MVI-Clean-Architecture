@@ -3,8 +3,8 @@ package com.example.dailypals.articles
 import com.example.dailypals.utils.getDaysAgo
 
 class ArticlesUseCase(private val repository: ArticlesRepository) {
-    suspend fun getArticles(): List<Article> {
-        val articles = repository.getAllArticles()
+    suspend fun getArticles(forceFetch: Boolean): List<Article> {
+        val articles = repository.getAllArticles(forceFetch)
         return _mapArticleRawToArticle(articles)
     }
 
