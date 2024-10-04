@@ -83,9 +83,8 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
-				BEA99BB92C9E25EB00A8D78E /* Screens */,
+				BE2BA4E12CAF6B5F0032B900 /* presentation */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
-				7555FF82242A565900829871 /* ContentView.swift */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
@@ -99,6 +98,15 @@
 				BE2BA4DF2CAF61D10032B900 /* libsqlite3.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE2BA4E12CAF6B5F0032B900 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				BEA99BB92C9E25EB00A8D78E /* Screens */,
+				7555FF82242A565900829871 /* ContentView.swift */,
+			);
+			path = presentation;
 			sourceTree = "<group>";
 		};
 		BEA99BB92C9E25EB00A8D78E /* Screens */ = {

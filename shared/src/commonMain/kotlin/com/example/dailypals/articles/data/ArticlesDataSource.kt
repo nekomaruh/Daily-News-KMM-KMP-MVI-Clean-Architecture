@@ -1,4 +1,4 @@
-package com.example.dailypals.articles
+package com.example.dailypals.articles.data
 
 import com.example.dailypals.cache.DailyPalsDatabase
 

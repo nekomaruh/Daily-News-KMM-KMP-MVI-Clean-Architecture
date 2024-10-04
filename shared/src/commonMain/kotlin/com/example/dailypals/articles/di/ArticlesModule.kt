@@ -1,12 +1,12 @@
 package com.example.dailypals.articles.di
 
 
-import com.example.dailypals.articles.ArticlesDataSource
-import com.example.dailypals.articles.ArticlesRepository
+import com.example.dailypals.articles.data.ArticlesDataSource
+import com.example.dailypals.articles.data.ArticlesRepository
 import org.koin.dsl.module
-import com.example.dailypals.articles.ArticlesService
-import com.example.dailypals.articles.ArticlesUseCase
-import com.example.dailypals.articles.ArticlesViewModel
+import com.example.dailypals.articles.data.ArticlesService
+import com.example.dailypals.articles.domain.ArticlesUseCase
+import com.example.dailypals.articles.presentation.ArticlesViewModel
 
 val articlesModule = module {
     single { ArticlesService(get()) }

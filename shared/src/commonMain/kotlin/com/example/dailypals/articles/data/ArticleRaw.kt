@@ -1,4 +1,4 @@
-package com.example.dailypals.articles
+package com.example.dailypals.articles.data
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

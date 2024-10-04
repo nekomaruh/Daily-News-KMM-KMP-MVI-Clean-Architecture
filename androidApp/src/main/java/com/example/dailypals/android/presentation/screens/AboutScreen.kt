@@ -1,4 +1,4 @@
-package com.example.dailypals.android.screens
+package com.example.dailypals.android.presentation.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize

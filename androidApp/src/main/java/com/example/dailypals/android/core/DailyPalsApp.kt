@@ -1,4 +1,4 @@
-package com.example.dailypals.android
+package com.example.dailypals.android.core
 
 import android.app.Application
 import com.example.dailypals.android.di.databaseModule

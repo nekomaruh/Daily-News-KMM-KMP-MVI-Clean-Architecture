@@ -1,4 +1,4 @@
-package com.example.dailypals.android
+package com.example.dailypals.android.presentation
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,15 +10,15 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.dailypals.android.screens.AboutScreen
-import com.example.dailypals.android.screens.ArticlesScreen
-import com.example.dailypals.android.screens.Screen
-import com.example.dailypals.articles.ArticlesViewModel
+import com.example.dailypals.android.presentation.screens.AboutScreen
+import com.example.dailypals.android.presentation.screens.ArticlesScreen
+import com.example.dailypals.android.presentation.screens.Screen
+import com.example.dailypals.articles.presentation.ArticlesViewModel
 import org.koin.androidx.compose.getViewModel
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun AppScaffold() {
+fun AppNavigator() {
     val navController = rememberNavController()
     Scaffold {
         AppNavHost(

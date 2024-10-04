@@ -3,15 +3,11 @@ package com.example.dailypals.android
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.dailypals.android.screens.AboutScreen
-import com.example.dailypals.android.screens.ArticlesScreen
-import com.example.dailypals.articles.ArticlesViewModel
+import com.example.dailypals.android.core.MyApplicationTheme
+import com.example.dailypals.android.presentation.AppNavigator
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +19,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    AppScaffold()
+                    AppNavigator()
                 }
             }
         }

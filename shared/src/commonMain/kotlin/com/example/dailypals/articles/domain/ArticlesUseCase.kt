@@ -1,5 +1,7 @@
-package com.example.dailypals.articles
+package com.example.dailypals.articles.domain
 
+import com.example.dailypals.articles.data.ArticleRaw
+import com.example.dailypals.articles.data.ArticlesRepository
 import com.example.dailypals.utils.getDaysAgo
 
 class ArticlesUseCase(private val repository: ArticlesRepository) {

@@ -1,6 +1,6 @@
 package com.example.dailypals.di
 
-import com.example.dailypals.articles.ArticlesViewModel
+import com.example.dailypals.articles.presentation.ArticlesViewModel
 import org.koin.core.component.KoinComponent
 import org.koin.core.context.startKoin
 import org.koin.core.component.inject
